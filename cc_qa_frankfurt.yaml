@@ -1,0 +1,13 @@
+aws_region: "eu-central-1"
+vpc_id: "vpc-0d3a21be45096286a"
+subnet_exposure: "internal"
+subnet_routable: true
+global_app: "TVM"
+global_appserviceid: "8cf39aff1b05c1503b69edf2b24bcb28"
+global_broker: "GOCB"
+global_cbp: "A01234"
+global_dataclass: "Internal"
+global_dcs: "Cloudbroker"
+global_env: "Development"
+global_opco: "AGO"
+global_project: "102"
