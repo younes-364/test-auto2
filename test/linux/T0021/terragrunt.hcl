@@ -20,9 +20,11 @@ inputs = {
   // Custom parameters
   parameter_group = {
     data_disk_size            = 10
-    instance_name             = "T0021-${local.run_id}",
-    provisioned_product_name  = "T0021-${local.run_id}",
-    vpc_id                    = local.global_vars.vpc_id,
+    instance_name             = "T0021-${local.run_id}"
+    provisioned_product_name  = "T0021-${local.run_id}"
+    vpc_id                    = local.global_vars.vpc_id
+    mpi_az_secondary          = "random"
+    mpi_az_current            = "primary"
   }
 
   // Mandatory tags
