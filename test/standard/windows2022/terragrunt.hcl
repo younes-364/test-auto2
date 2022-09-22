@@ -3,7 +3,7 @@ include "root" {
 }
 
 locals {
-  run_id = get_env("MPI_RUN_ID")
+  product_name = get_env("MPI_PRODUCT_NAME")
   global_var_file = get_env("MPI_GLOBAL_VAR_FILE")
   global_vars = yamldecode(file(find_in_parent_folders("${local.global_var_file}")))
 }
@@ -19,9 +19,9 @@ inputs = {
 
   // Custom parameters
   parameter_group = {
-    instance_name             = "windows2022-${local.run_id}",
-    provisioned_product_name  = "windows2022-${local.run_id}",
-    vpc_id                    = local.global_vars.vpc_id,
+    instance_name             = local.product_name
+    provisioned_product_name  = local.product_name
+    vpc_id                    = local.global_vars.vpc_id
   }
 
   // Mandatory tags

@@ -12,13 +12,14 @@ inputs = {
   // General configuration
   dr_service_class = "None"
   backup_plan      = "none"
-  image_template   = "EC2MutableWin2016Base"
-  os_type          = "Windows"
+  image_template   = "EC2MutableRedhat7Base"
+  os_type          = "Linux"
   subnet_exposure  = local.global_vars.subnet_exposure
   subnet_routable  = local.global_vars.subnet_routable
 
   // Custom parameters
   parameter_group = {
+    data_disk_size            = 10
     instance_name             = local.product_name
     provisioned_product_name  = local.product_name
     vpc_id                    = local.global_vars.vpc_id
@@ -36,8 +37,18 @@ inputs = {
   global_project      = local.global_vars.global_project
 
   // Custom tags
-  custom_tags         = {
-    "local.purpose"  = "mpi"
-    "local.vmsource" = "new"
+  custom_tags = {
+    "local.purpose"              = "mpi"
+    "local.vmsource"             = "new"
+    "axarole"                    = "apachetomcat9"
+    "axa_apache.state"           = "present"
+    "axa_apache.port"            = "443"
+    "axa_apache.dns_name"        = "www.myexample.com"
+    "axa_tomcat9.state"          = "present"
+    "axa_tomcat9.Xmx"            = "1024"
+    "axa_tomcat9.Xms"            = "1024"
+    "axa_tomcat9.instances"      = "default"
+    "axa_tomcat9.instance_users" = "tomcat"
+    "axa_java.java_version"      = "8"
   }
 }

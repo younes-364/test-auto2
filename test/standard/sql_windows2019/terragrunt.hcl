@@ -3,7 +3,7 @@ include "root" {
 }
 
 locals {
-  run_id = get_env("MPI_RUN_ID")
+  product_name = get_env("MPI_PRODUCT_NAME")
   global_var_file = get_env("MPI_GLOBAL_VAR_FILE")
   global_vars = yamldecode(file(find_in_parent_folders("${local.global_var_file}")))
 }
@@ -20,10 +20,10 @@ inputs = {
   // Custom parameters
   parameter_group = {
     sql_drive_size            = 30
-    instance_name             = "sql-windows2019-${local.run_id}",
-    provisioned_product_name  = "sql-windows2019-${local.run_id}",
-    instance_type             = "t3.large",
-    vpc_id                    = local.global_vars.vpc_id,
+    instance_name             = local.product_name
+    provisioned_product_name  = local.product_name
+    instance_type             = "t3.large"
+    vpc_id                    = local.global_vars.vpc_id
   }
 
   // Mandatory tags

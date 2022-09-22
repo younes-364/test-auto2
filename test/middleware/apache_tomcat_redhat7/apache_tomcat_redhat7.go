@@ -11,11 +11,11 @@ import (
     test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestApacheRedHat8(t *testing.T) {
+func TestApacheTomcatRedHat7(t *testing.T) {
     t.Parallel()
 
     workingDir := "./"
-    productName := "apache-redhat8"
+    productName := "apache-tomcat-redhat7"
     runId := random.UniqueId()
     uniqueProductName := fmt.Sprintf("%s-%s", productName, runId)
 
