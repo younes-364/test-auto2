@@ -34,12 +34,18 @@ func CollectProductLogs(t testing.TestingT, productName string) {
         logStream := fmt.Sprintf("%v-cfn-init.log", ec2Instance)
         logEvents := getCloudWatchLogEvents(logGroup, logStream)
         
-        logFile := "\n"
-        for _, log := range logEvents {
-            logFile = logFile + fmt.Sprintln("    ", *log.Message)
-        }
+        // This method of exporting the logs breaks the terratest log parser output for now
+        // logFile := "\n"
+        // for _, log := range logEvents {
+        //     logFile = logFile + fmt.Sprintln("    ", *log.Message)
+        // }
+        // logger.Log(t, logFile)
 
-        logger.Log(t, logFile)
+        // We need to print lines individually which results in two timestamps, one coming from
+        // the terratest logger, and one from the CloudWatch message
+        for _, log := range logEvents {
+            logger.Logf(t, " | %v", *log.Message)
+        }
     }
 
     logger.Log(t, ">>>>>>>>>>>>>>> @@details <<<<<<<<<<<<<<<")
