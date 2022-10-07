@@ -1,5 +1,5 @@
 aws_region: "eu-central-1"
-vpc_id: "vpc-0f40f1bbe5b144601"
+vpc_id: "vpc-0809dbf42b714ca56"
 subnet_exposure: "internal"
 subnet_routable: true
 global_app: "TVM"
