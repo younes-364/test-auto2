@@ -11,7 +11,7 @@ locals {
 inputs = {
   // General configuration
   dr_service_class = "Bronze"
-  backup_plan      = "light"
+  backup_plan      = "basic"
   image_template   = "EC2MutableWin2019Sql"
   os_type          = "Windows"
   subnet_exposure  = local.global_vars.subnet_exposure

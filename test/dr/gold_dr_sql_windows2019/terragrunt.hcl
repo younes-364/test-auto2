@@ -24,6 +24,8 @@ inputs = {
     provisioned_product_name  = local.product_name
     instance_type             = "t3.large"
     vpc_id                    = local.global_vars.vpc_id
+    mpi_az_secondary          = "random"
+    mpi_az_current            = "primary"
   }
 
   // Mandatory tags
