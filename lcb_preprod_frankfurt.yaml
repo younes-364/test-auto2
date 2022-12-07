@@ -1,0 +1,13 @@
+aws_region: "eu-central-1"
+vpc_id: "vpc-0e4d3f0697568b43f"
+subnet_exposure: "internal"
+subnet_routable: true
+global_app: "AGO LCB MPI POC"
+global_appserviceid: "3d05ec181baf55d0e3e66574604bcb59"
+global_broker: "GOCB"
+global_cbp: "A01234"
+global_dataclass: "Internal"
+global_dcs: "Cloudbroker"
+global_env: "Development"
+global_opco: "AGO"
+global_project: "102"
