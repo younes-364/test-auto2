@@ -2,6 +2,7 @@ aws_region: "eu-central-1"
 vpc_id: "vpc-0d3a21be45096286a"
 subnet_exposure: "internal"
 subnet_routable: true
+backup_plan: "none"
 global_app: "TVM"
 global_appserviceid: "8cf39aff1b05c1503b69edf2b24bcb28"
 global_broker: "GOCB"

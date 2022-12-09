@@ -2,6 +2,7 @@ aws_region: "eu-central-1"
 vpc_id: "vpc-0809dbf42b714ca56"
 subnet_exposure: "internal"
 subnet_routable: true
+backup_plan: "none"
 global_app: "AGO LCB MPI POC"
 global_appserviceid: "3d05ec181baf55d0e3e66574604bcb59"
 global_broker: "GOCB"

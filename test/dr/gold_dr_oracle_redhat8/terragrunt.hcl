@@ -11,7 +11,7 @@ locals {
 inputs = {
   // General configuration
   dr_service_class = "Gold"
-  backup_plan      = "none"
+  backup_plan      = local.global_vars.backup_plan
   image_template   = "EC2MutableRedhat8Oracle"
   os_type          = "Linux"
   subnet_exposure  = local.global_vars.subnet_exposure

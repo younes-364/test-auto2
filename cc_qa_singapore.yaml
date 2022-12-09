@@ -1,5 +1,6 @@
 aws_region: "ap-southeast-1"
 vpc_id: "vpc-0fdf61394300c8874"
+backup_plan: "none"
 subnet_exposure: "internal"
 subnet_routable: true
 global_app: "TVM"
